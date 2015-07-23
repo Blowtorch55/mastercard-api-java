@@ -27,15 +27,18 @@ Make sure to store your .p12 file in the same directory as where you pulled the 
 Code example - using the Local Favorites API to get a list of popular restaurants in the US.
 Since the Environment is listed as "SANDBOX", the data returned won't be real MasterCard data.
 
+'''java
 
 import com.mastercard.api.common.Environment;
 import com.mastercard.api.restaurants.v1.domain.Restaurants;
-import com.mastercard.api.restaurants.v1.domain.options.RestaurantsLocalFavoritesOptions;MerchantLocationRequestOptions;
+import com.mastercard.api.restaurants.v1.domain.options.RestaurantsLocalFavoritesOptions;
 import com.mastercard.api.restaurants.v1.services.RestaurantsLocalFavoritesService;
 
 import junit.framework.TestCase;
 import utils.TestUtils;
 	
+public class RestaurantsSampleCode {
+
 	public static void main(String[] args)
 	{
         TestUtils testUtils = new TestUtils(Environment.SANDBOX);
@@ -58,6 +61,7 @@ import utils.TestUtils;
             System.out.println("Restaurant is " + r.getName());
 	}
 }
+'''
 
 Note that the TestUtils class is designed to get the user's consumer key and private key credentials. The getConsumerKey method and getPrivateKey methods look like so
 
