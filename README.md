@@ -13,13 +13,13 @@ Consumer Key/Private Key Acquisition:
 
 Before beginning to use MasterCard's Java SDK, make sure you are a registered MasterCard developer and have a consumer and private key to use for your project:
 	
-	1. Go to developer.mastercard.com and click "Register" to register yourself for all of MasterCard's developer tools.
+Go to developer.mastercard.com and click "Register" to register yourself for all of MasterCard's developer tools.
 
-	2. Once registered, you will need both a Consumer Key and Private Key in order to use most of the MasterCard APIs. You can get a consumer key by going to the home screen, clicking on "Services", scrolling two-thirds of the way down the page, and clicking on "Go to My Dashboard". 
+Once registered, you will need both a Consumer Key and Private Key in order to use most of the MasterCard APIs. You can get a consumer key by going to the home screen, clicking on "Services", scrolling two-thirds of the way down the page, and clicking on "Go to My Dashboard". 
 
-	3. Follow the instructions on this link - https://developer.mastercard.com/portal/display/api/Generating+RSA+Keys - to obtain both a Consumer Key and a .p12 file that contains your private key. 
+Follow the instructions on this link - https://developer.mastercard.com/portal/display/api/Generating+RSA+Keys - to obtain both a Consumer Key and a .p12 file that contains your private key. 
 
-	4. Make sure to store your .p12 file in the same directory as where you pulled the MasterCard SDK so that the private key is accessible from within your code.
+Make sure to store your .p12 file in the same directory as where you pulled the MasterCard SDK so that the private key is accessible from within your code.
 
 
 -------------------------------------------------------------------------------------------
@@ -62,14 +62,9 @@ Note that the TestUtils class is designed to get the user's consumer key and pri
 
 // return consumer key in String form
 
-public String getConsumerKey()
-{
-    return "example-consumer-key";
-}
-
-// return the Private Key from the .p12 file
-
-public PrivateKey getPrivateKey() {
+	return "example-consumer-key"
+	
+// return private key from .p12 file
 
         String fileName = "example-file.p12"; // put the name of your p12 file here
         String password = "password"; // your keystore password here
