@@ -27,41 +27,40 @@ Make sure to store your .p12 file in the same directory as where you pulled the 
 Code example - using the Local Favorites API to get a list of popular restaurants in the US.
 Since the Environment is listed as "SANDBOX", the data returned won't be real MasterCard data.
 
-'''java
 
-import com.mastercard.api.common.Environment;
-import com.mastercard.api.restaurants.v1.domain.Restaurants;
-import com.mastercard.api.restaurants.v1.domain.options.RestaurantsLocalFavoritesOptions;
-import com.mastercard.api.restaurants.v1.services.RestaurantsLocalFavoritesService;
+	import com.mastercard.api.common.Environment;
+	import com.mastercard.api.restaurants.v1.domain.Restaurants;
+	import com.mastercard.api.restaurants.v1.domain.options.RestaurantsLocalFavoritesOptions;
+	import com.mastercard.api.restaurants.v1.services.RestaurantsLocalFavoritesService;
 
-import junit.framework.TestCase;
-import utils.TestUtils;
+	import junit.framework.TestCase;
+	import utils.TestUtils;
 	
-public class RestaurantsSampleCode {
+	public class RestaurantsSampleCode {
 
-	public static void main(String[] args)
-	{
-        TestUtils testUtils = new TestUtils(Environment.SANDBOX);
-	    RestaurantsLocalFavoritesService service = new RestaurantsLocationServiceService(
-            Environment.SANDBOX,
-            testUtils.getConsumerKey(), 
-            testUtils.getPrivateKey()
-        );
+		public static void main(String[] args)
+		{
+        	TestUtils testUtils = new TestUtils(Environment.SANDBOX);
+		RestaurantsLocalFavoritesService service = new RestaurantsLocationServiceService(
+            	Environment.SANDBOX,
+            	testUtils.getConsumerKey(), 
+            	testUtils.getPrivateKey()
+        	);
 
-        RestaurantsLocalFavoritesOptions options = new RestaurantsLocalFavoritesOptions(
-             0,
-             25
-        )
+        	RestaurantsLocalFavoritesOptions options = new RestaurantsLocalFavoritesOptions(
+        	0,
+             	25
+        	)
 
-        options.setCountry("USA");
+        	options.setCountry("USA");
 
-        Restaurants restaurants = service2.getRestaurants(options2);
-        List<Restaurants.Restaurant> list = restaurants.getRestaurantList();
-        for (Restaurants.Restaurant r : list)
-            System.out.println("Restaurant is " + r.getName());
+        	Restaurants restaurants = service2.getRestaurants(options2);
+        	List<Restaurants.Restaurant> list = restaurants.getRestaurantList();
+        	for (Restaurants.Restaurant r : list)
+            	System.out.println("Restaurant is " + r.getName());
+		}
 	}
-}
-'''
+
 
 Note that the TestUtils class is designed to get the user's consumer key and private key credentials. The getConsumerKey method and getPrivateKey methods look like so
 
@@ -71,25 +70,27 @@ return the consumer key:
 	
 return private key from .p12 file:
 
-        String fileName = "example-file.p12"; // put the name of your p12 file here
-        String password = "password"; // your keystore password here
-        KeyStore ks;
-        Key key;
-        try { 
-            ks = KeyStore.getInstance("PKCS12"); // get user password and file input stream
-            ClassLoader cl = this.getClass().getClassLoader();
-            InputStream stream = cl.getResourceAsStream(fileName);
-            ks.load(stream, password.toCharArray());
-            Enumeration<String> enumeration = ks.aliases();
-            String keyAlias = enumeration.nextElement();
-            key = ks.getKey(keyAlias, password.toCharArray());
-        }
-        catch (Exception e) {
-            throw new MCApiRuntimeException(e);
-        }
-        return (PrivateKey) key;
+	public PrivateKey getPrivateKey() {
+
+        	String fileName = "example-file.p12"; // put the name of your p12 file here
+        	String password = "password"; // your keystore password here
+        	KeyStore ks;
+        	Key key;
+        	try { 
+           		ks = KeyStore.getInstance("PKCS12"); // get user password and file input stream
+            		ClassLoader cl = this.getClass().getClassLoader();
+            		InputStream stream = cl.getResourceAsStream(fileName);
+            		ks.load(stream, password.toCharArray());
+            		Enumeration<String> enumeration = ks.aliases();
+        		String keyAlias = enumeration.nextElement();
+            		key = ks.getKey(keyAlias, password.toCharArray());
+        	}
+        		catch (Exception e) {
+            			throw new MCApiRuntimeException(e);
+        		}
+        	return (PrivateKey) key;
     
-    }
+    	}
 
 
 -------------------------------------------------------------------------------------------
