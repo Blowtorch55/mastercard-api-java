@@ -1,10 +1,10 @@
-MasterCard Java SDK Readme:
+MasterCard Java SDK Readme
 
 -------------------------------------------------------------------------------------------
 
 Overview:
 
-MasterCard's Java SDK gives developers access to a host of powerful tools, including P2P Money transfers (MoneySend), locations of various merchants and ATMS (Locations), and the ability to detect potentially fraudulent transactions (Fraud Scoring). Calls to MasterCard's API are in accordance with OAuth 1.0 standards.
+MasterCard's Java SDK gives developers access to a host of powerful tools, including P2P Money transfers (MoneySend), the ability to detect potentially fraudulent transactions (Fraud Scoring), and finding information about locally popular restaurants (Local Favorites). Calls to MasterCard's API are in accordance with OAuth 1.0 standards.
 
 
 -------------------------------------------------------------------------------------------
@@ -24,7 +24,8 @@ Make sure to store your .p12 file in the same directory as where you pulled the 
 
 -------------------------------------------------------------------------------------------
 
-Code example
+Code example - using the Local Favorites API to get a list of popular restaurants in the US.
+Since the Environment is listed as "SANDBOX", the data returned won't be real MasterCard data.
 
 
 import com.mastercard.api.common.Environment;
@@ -60,11 +61,11 @@ import utils.TestUtils;
 
 Note that the TestUtils class is designed to get the user's consumer key and private key credentials. The getConsumerKey method and getPrivateKey methods look like so
 
-// return consumer key in String form
+return the consumer key:
 
 	return "example-consumer-key"
 	
-// return private key from .p12 file
+return private key from .p12 file:
 
         String fileName = "example-file.p12"; // put the name of your p12 file here
         String password = "password"; // your keystore password here
