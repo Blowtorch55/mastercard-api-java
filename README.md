@@ -48,8 +48,8 @@ Since the Environment is listed as "SANDBOX", the data returned won't be real Ma
         	);
 
         	RestaurantsLocalFavoritesOptions options = new RestaurantsLocalFavoritesOptions(
-        	0,
-             	25
+        	0, 
+        	25
         	)
 
         	options.setCountry("USA");
