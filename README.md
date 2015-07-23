@@ -76,18 +76,19 @@ return private key from .p12 file:
         	String password = "password"; // your keystore password here
         	KeyStore ks;
         	Key key;
-        	try { 
-           		ks = KeyStore.getInstance("PKCS12"); // get user password and file input stream
-            		ClassLoader cl = this.getClass().getClassLoader();
-            		InputStream stream = cl.getResourceAsStream(fileName);
-            		ks.load(stream, password.toCharArray());
-            		Enumeration<String> enumeration = ks.aliases();
-        		String keyAlias = enumeration.nextElement();
-            		key = ks.getKey(keyAlias, password.toCharArray());
+        	try 
+        	{ 
+         		ks = KeyStore.getInstance("PKCS12"); // get user password and file input stream
+        		ClassLoader cl = this.getClass().getClassLoader();
+       			InputStream stream = cl.getResourceAsStream(fileName);
+        		ks.load(stream, password.toCharArray());
+        		Enumeration<String> enumeration = ks.aliases();
+         		String keyAlias = enumeration.nextElement();
+        		key = ks.getKey(keyAlias, password.toCharArray());
         	}
-        		catch (Exception e) {
-            			throw new MCApiRuntimeException(e);
-        		}
+        	catch (Exception e) {
+        		throw new MCApiRuntimeException(e);
+        	}
         	return (PrivateKey) key;
     
     	}
