@@ -1,15 +1,15 @@
-#**MasterCard Java SDK Readme**
+#MasterCard Java SDK Readme
 
 
 
-##*Overview*
+##Overview
 
 MasterCard's Java SDK gives developers access to a host of powerful tools, including P2P Money transfers (MoneySend), the ability to detect potentially fraudulent transactions (Fraud Scoring), and finding information about locally popular restaurants (Local Favorites). Calls to MasterCard's API are in accordance with OAuth 1.0 standards.
 
 
 -------------------------------------------------------------------------------------------
 
-##*Consumer Key and Private Key Acquisition*
+##Consumer Key and Private Key Acquisition
 
 Before beginning to use MasterCard's Java SDK, make sure you are a registered MasterCard developer and have a consumer and private key to use for your project:
 	
@@ -24,7 +24,7 @@ Make sure to store your .p12 file in the same directory as where you pulled the 
 
 -------------------------------------------------------------------------------------------
 
-##*Code example*
+##Code example
 
 Using the Local Favorites API to get a list of popular restaurants in the US.
 Since the Environment is listed as "SANDBOX", the data returned won't be real MasterCard data.
@@ -66,7 +66,9 @@ Note that the TestUtils class is designed to get the user's consumer key and pri
 
 return the consumer key:
 
-	return "example-consumer-key"
+	public String getConsumerKey() { 
+		return "example-consumer-key"
+	}
 	
 return private key from .p12 file:
 
@@ -96,7 +98,7 @@ return private key from .p12 file:
 
 -------------------------------------------------------------------------------------------
 
-##**Full APIs**
+##Full APIs
 
 For a full API reference, head to the MasterCard Developer Zone: https://developer.mastercard.com/portal/display/api/API
 
