@@ -40,17 +40,15 @@ Since the Environment is listed as "SANDBOX", the data returned won't be real Ma
 
 		public static void main(String[] args)
 		{
-        	TestUtils testUtils = new TestUtils(Environment.SANDBOX);
-		RestaurantsLocalFavoritesService service = new RestaurantsLocationServiceService(
+			TestUtils testUtils = new TestUtils(Environment.SANDBOX);
+			RestaurantsLocalFavoritesService service = new RestaurantsLocationServiceService(
             	Environment.SANDBOX,
             	testUtils.getConsumerKey(), 
             	testUtils.getPrivateKey()
         	);
 
         	RestaurantsLocalFavoritesOptions options = new RestaurantsLocalFavoritesOptions(
-        	0, 
-        	25
-        	)
+        	0, 25)
 
         	options.setCountry("USA");
 
