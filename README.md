@@ -13,13 +13,13 @@ MasterCard's Java SDK gives developers access to a host of powerful tools, inclu
 
 Before beginning to use MasterCard's Java SDK, make sure you are a registered MasterCard developer and have a consumer and private key to use for your project:
 	
-Go to developer.mastercard.com and click "Register" to register yourself for all of MasterCard's developer tools.
+- Go to https://developer.mastercard.com/ and click "Register" to register yourself for all of MasterCard's developer tools.
 
-Once registered, you will need both a Consumer Key and Private Key in order to use most of the MasterCard APIs. You can get a consumer key by going to the home screen, clicking on "Services", scrolling two-thirds of the way down the page, and clicking on "Go to My Dashboard". 
+- Once registered, you will need both a Consumer Key and Private Key in order to use most of the MasterCard APIs. You can get a consumer key by going to the home screen, clicking on "Services", scrolling two-thirds of the way down the page, and clicking on "Go to My Dashboard". 
 
-Follow the instructions on this link - https://developer.mastercard.com/portal/display/api/Generating+RSA+Keys - to obtain both a Consumer Key and a .p12 file that contains your private key. 
+- Follow the instructions on this link - https://developer.mastercard.com/portal/display/api/Generating+RSA+Keys - to obtain both a Consumer Key and a .p12 file that contains your private key. 
 
-Make sure to store your .p12 file in the same directory as where you pulled the MasterCard SDK so that the private key is accessible from within your code.
+- Make sure to store your .p12 file in the same directory as where you pulled the MasterCard SDK so that the private key is accessible from within your code.
 
 
 -------------------------------------------------------------------------------------------
@@ -92,7 +92,6 @@ return private key from .p12 file:
         		throw new MCApiRuntimeException(e);
         	}
         	return (PrivateKey) key;
-    
     	}
 
 
