@@ -1,11 +1,10 @@
-# mastercard-api-java
-MasterCard API SDK for Java.  See http://developer.mastercard.com
+MasterCard Java SDK Readme:
+
+-------------------------------------------------------------------------------------------
 
 Overview:
 
-MasterCard's Java SDK gives developers access to a host of powerful tools, including P2P Money transfers (MoneySend), 
-locations of various merchants and ATMS (Locations), and the ability to detect potentially fraudulent 
-transactions (Fraud Scoring). Calls to MasterCard's API are in accordance with OAuth 1.0 standards.
+MasterCard's Java SDK gives developers access to a host of powerful tools, including P2P Money transfers (MoneySend), locations of various merchants and ATMS (Locations), and the ability to detect potentially fraudulent transactions (Fraud Scoring). Calls to MasterCard's API are in accordance with OAuth 1.0 standards.
 
 
 -------------------------------------------------------------------------------------------
@@ -33,14 +32,16 @@ import com.mastercard.api.restaurants.v1.domain.Restaurants;
 import com.mastercard.api.restaurants.v1.domain.options.RestaurantsLocalFavoritesOptions;MerchantLocationRequestOptions;
 import com.mastercard.api.restaurants.v1.services.RestaurantsLocalFavoritesService;
 
-public class GetRestaurantsInArea {
+import junit.framework.TestCase;
+import utils.TestUtils;
 	
 	public static void main(String[] args)
 	{
+        TestUtils testUtils = new TestUtils(Environment.SANDBOX);
 	    RestaurantsLocalFavoritesService service = new RestaurantsLocationServiceService(
             Environment.SANDBOX,
-            getConsumerKey(), 
-            getPrivateKey()
+            testUtils.getConsumerKey(), 
+            testUtils.getPrivateKey()
         );
 
         RestaurantsLocalFavoritesOptions options = new RestaurantsLocalFavoritesOptions(
@@ -57,7 +58,7 @@ public class GetRestaurantsInArea {
 	}
 }
 
-In addition to this code, you'll need helper classes/methods to get your consumer key and private key details
+Note that the TestUtils class is designed to get the user's consumer key and private key credentials. The getConsumerKey method and getPrivateKey methods look like so
 
 // return consumer key in String form
 
@@ -70,17 +71,18 @@ public String getConsumerKey()
 
 public PrivateKey getPrivateKey() {
 
-        String fileName = "example-file.p12";
-        String password = "password";
+        String fileName = "example-file.p12"; // put the name of your p12 file here
+        String password = "password"; // your keystore password here
         KeyStore ks;
         Key key;
-        try { ks = KeyStore.getInstance("PKCS12"); // get user password and file input stream
-        ClassLoader cl = this.getClass().getClassLoader();
-        InputStream stream = cl.getResourceAsStream(fileName);
-        ks.load(stream, password.toCharArray());
-        Enumeration<String> enumeration = ks.aliases();
-        String keyAlias = enumeration.nextElement();
-        key = ks.getKey(keyAlias, password.toCharArray());
+        try { 
+            ks = KeyStore.getInstance("PKCS12"); // get user password and file input stream
+            ClassLoader cl = this.getClass().getClassLoader();
+            InputStream stream = cl.getResourceAsStream(fileName);
+            ks.load(stream, password.toCharArray());
+            Enumeration<String> enumeration = ks.aliases();
+            String keyAlias = enumeration.nextElement();
+            key = ks.getKey(keyAlias, password.toCharArray());
         }
         catch (Exception e) {
             throw new MCApiRuntimeException(e);
