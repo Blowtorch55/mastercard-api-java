@@ -54,7 +54,7 @@ Since the Environment is listed as "SANDBOX", the data returned won't be real Ma
 
         	options.setCountry("USA");
 
-        	Restaurants restaurants = service2.getRestaurants(options2);
+        	Restaurants restaurants = service.getRestaurants(options2);
         	List<Restaurants.Restaurant> list = restaurants.getRestaurantList();
         	for (Restaurants.Restaurant r : list)
             	System.out.println("Restaurant is " + r.getName());
