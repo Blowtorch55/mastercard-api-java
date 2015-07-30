@@ -6,16 +6,24 @@
 
 MasterCard's Java SDK gives developers access to a host of powerful tools, including P2P Money transfers (MoneySend), the ability to detect potentially fraudulent transactions (Fraud Scoring), and finding information about locally popular restaurants (Local Favorites). Calls to MasterCard's API are in accordance with OAuth 1.0 standards.
 
-The following APIs are supported in the Java SD:
+The following APIs are supported in the Java SDK:
 
 Bill Payment
+
 Fraud Scoring 
+
 Locations
+
 MDES Customer Service 
+
 Merchant Identifier
+
 MoneySend
+
 MasterPass - Partner Wallet
+
 MasterCard rePower
+
 Local Favorites (for finding restaurants)
 
 -------------------------------------------------------------------------------------------
