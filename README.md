@@ -48,7 +48,7 @@ Before beginning to use MasterCard's Java SDK, make sure you are a registered Ma
 Using the Local Favorites API to get a list of popular restaurants in the US.
 Since the Environment is listed as "SANDBOX", the data returned won't be real MasterCard data.
 
-
+```java
 	import com.mastercard.api.common.Environment;
 	import com.mastercard.api.restaurants.v1.domain.Restaurants;
 	import com.mastercard.api.restaurants.v1.domain.options.RestaurantsLocalFavoritesOptions;
@@ -59,46 +59,44 @@ Since the Environment is listed as "SANDBOX", the data returned won't be real Ma
 	
 	public class RestaurantsSampleCode {
 
-		public static void main(String[] args)
-		{
+		public static void main(String[] args) {
 			TestUtils testUtils = new TestUtils(Environment.SANDBOX);
 			RestaurantsLocalFavoritesService service = new RestaurantsLocationServiceService(
-            	Environment.SANDBOX,
-            	testUtils.getConsumerKey(), 
-            	testUtils.getPrivateKey()
-        	);
+            			Environment.SANDBOX,
+            			testUtils.getConsumerKey(), 
+            			testUtils.getPrivateKey()
+        		);
 
-        	RestaurantsLocalFavoritesOptions options = new RestaurantsLocalFavoritesOptions(
-        	0, 25)
+        		RestaurantsLocalFavoritesOptions options = new RestaurantsLocalFavoritesOptions(0, 25)
 
-        	options.setCountry("USA");
+        		options.setCountry("USA");
 
-        	Restaurants restaurants = service.getRestaurants(options2);
-        	List<Restaurants.Restaurant> list = restaurants.getRestaurantList();
-        	for (Restaurants.Restaurant r : list)
-            	System.out.println("Restaurant is " + r.getName());
+        		Restaurants restaurants = service.getRestaurants(options);
+        		List<Restaurants.Restaurant> list = restaurants.getRestaurantList();
+        		for (Restaurants.Restaurant r : list) {
+            			System.out.println("Restaurant is " + r.getName());
+            		}
 		}
 	}
-
+```
 
 Note that the TestUtils class is designed to get the user's consumer key and private key credentials. The getConsumerKey method and getPrivateKey methods look like so
 
 return the consumer key:
-
+```java
 	public String getConsumerKey() { 
 		return "example-consumer-key"
 	}
-	
+```
+
 return private key from .p12 file:
-
+```java
 	public PrivateKey getPrivateKey() {
-
         	String fileName = "example-file.p12"; // put the name of your p12 file here
         	String password = "password"; // your keystore password here
         	KeyStore ks;
         	Key key;
-        	try 
-        	{ 
+        	try { 
          		ks = KeyStore.getInstance("PKCS12"); // get user password and file input stream
         		ClassLoader cl = this.getClass().getClassLoader();
        			InputStream stream = cl.getResourceAsStream(fileName);
@@ -112,7 +110,7 @@ return private key from .p12 file:
         	}
         	return (PrivateKey) key;
     	}
-
+```
 
 -------------------------------------------------------------------------------------------
 
