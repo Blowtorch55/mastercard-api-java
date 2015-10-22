@@ -357,7 +357,8 @@ public abstract class Connector  {
     private void writeBodyToConnection(String body, HttpsURLConnection con) throws IOException {
         OutputStreamWriter request = null;
         try {
-            request= new OutputStreamWriter(con.getOutputStream());
+            CharsetEncoder encoder = Charset.forName("UTF-8").newEncoder();
+            request= new OutputStreamWriter(con.getOutputStream(), encoder);
             request.append(body);
             request.flush();
         } catch (IOException e) {
