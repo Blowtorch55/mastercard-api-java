@@ -971,7 +971,7 @@ public class TransferRequest {
         @XmlElement(name = "AccountNumber")
         protected Long accountNumber;
         @XmlElement(name = "ExpiryMonth")
-        protected String expiryMonth;
+        protected Integer expiryMonth;
         @XmlElement(name = "ExpiryYear")
         protected Integer expiryYear;
 
@@ -995,7 +995,7 @@ public class TransferRequest {
          * Gets the value of the expiryMonth property.
          * 
          */
-        public String getExpiryMonth() {
+        public Integer getExpiryMonth() {
             return expiryMonth;
         }
 
@@ -1003,7 +1003,7 @@ public class TransferRequest {
          * Sets the value of the expiryMonth property.
          * 
          */
-        public void setExpiryMonth(String value) {
+        public void setExpiryMonth(Integer value) {
             this.expiryMonth = value;
         }
 

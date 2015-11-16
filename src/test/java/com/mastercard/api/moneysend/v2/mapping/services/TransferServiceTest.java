@@ -36,7 +36,7 @@ public class TransferServiceTest extends TestCase {
         transferRequestCard.getSenderAddress().setPostalCode(22207);
         transferRequestCard.getSenderAddress().setCountry("USA");
         transferRequestCard.getFundingCard().setAccountNumber(5184680430000006L);
-        transferRequestCard.getFundingCard().setExpiryMonth("09");
+        transferRequestCard.getFundingCard().setExpiryMonth(11);
         transferRequestCard.getFundingCard().setExpiryYear(2014);
         transferRequestCard.setFundingUCAF("MjBjaGFyYWN0ZXJqdW5rVUNBRjU=1111");
         transferRequestCard.setFundingMasterCardAssignedId(123456);
