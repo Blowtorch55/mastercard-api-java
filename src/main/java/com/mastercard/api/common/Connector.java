@@ -11,6 +11,8 @@ import javax.xml.bind.Unmarshaller;
 
 import java.io.*;
 import java.net.*;
+import java.nio.charset.Charset;
+import java.nio.charset.CharsetEncoder;
 import java.security.*;
 import java.util.*;
 
