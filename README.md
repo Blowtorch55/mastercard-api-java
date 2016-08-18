@@ -1,5 +1,6 @@
 #MasterCard Java SDK Readme
 
+DEPRECATED: Checkout our new APIs http://developer.mastercard.com 
 
 
 ##Overview
